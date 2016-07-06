@@ -126,7 +126,7 @@ function findRangee(a, na, w, h, data, callback)
 
 	for(b = 0; b < a+1; b++)
 	{
-		c = a-b;
+		let c = a-b;
 		if(b < w && c < h)
 		{
 			let ma_promesse = findPixel(b, c, data).then(function(retour){
@@ -153,7 +153,7 @@ function findPixel(x, y, data, force)
 {
 	return new Promise(function (resolve, reject) {
 		let objToFind = {};
-		if(force == null)
+		if(force === null)
 		{
 			if(y > 0)
 			{
