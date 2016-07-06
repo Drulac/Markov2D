@@ -1,0 +1,27 @@
+{
+  "name": "markov2d",
+  "version": "1.0.0",
+  "description": "An simple application used to create picture using markov algorithme, in 2D",
+  "author": "Drulac <dev.drulac@gmail.com>",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Drulac/Markov2D.git"
+  },
+  "keywords": [
+    "2D",
+    "markov"
+  ],
+  "bugs": {
+    "url": "https://github.com/Drulac/Markov2D/issues"
+  },
+  "homepage": "https://github.com/Drulac/Markov2D#readme",
+  "dependencies": {
+    "fs": "^0.0.2",
+    "mongodb": "^2.1.18",
+    "pngjs": "^2.3.1",
+    "promise": "^7.1.1",
+    "request": "^2.72.0"
+  },
+  "license": "MIT"
+}
