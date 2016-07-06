@@ -5,7 +5,7 @@ const PNG = require('pngjs').PNG;
 var db = null;
 
 MongoClient.connect("mongodb://localhost/Markov", function(error, database) {
-	if (error) throw error;
+	if(error) throw error;
 	//Connection à la base de données 'Markov'
 
 	db = database;
@@ -97,7 +97,7 @@ function tryPicture(img)
 			}
 		}
 		db.collection("pixels").insert(toSend, null, function (error, results) {
-			if (error) throw error;
+			if(error) throw error;
 
 			process.exit();
 		});
@@ -195,7 +195,7 @@ function findPixel(x, y, data, force)
 
 		let yourRandomNumber = Math.floor(Math.random() * 30000);
 		db.collection("pixels").find(objToFind).limit(1).skip(yourRandomNumber).toArray(function (error, results) {
-			if (error) throw error;
+			if(error) throw error;
 
 			if(results.length == 0)
 			{
