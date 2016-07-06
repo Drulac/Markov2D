@@ -37,7 +37,7 @@ function tryPicture(img)
 	}))
 	.on('parsed', function() {
 
-		pixels = new Array(this.height);
+		let pixels = new Array(this.height);
 
 		for (let y = 0, ny = this.height; y < ny; y++) {
 			pixels[y] = new Array(this.width);
@@ -49,12 +49,12 @@ function tryPicture(img)
 			}
 		}
 
-		toSend = [];
+		let toSend = [];
 
 		i = 0;
 		for (let y = 0, ny = this.height; y < ny; y++) {
 			for (let x = 0, nx = this.width; x < nx; x++) {
-				ici = pixels[y][x];
+				let ici = pixels[y][x];
 
 				if(y > 0)
 				{
@@ -124,7 +124,7 @@ function makePicture(w, h, callback)
 
 function findRangee(a, na, w, h, data, callback)
 {
-	promesses = [];
+	let promesses = [];
 
 	for(b = 0; b < a+1; b++)
 	{
@@ -195,7 +195,7 @@ function findPixel(x, y, data, force)
 			}
 		}
 
-		yourRandomNumber = Math.floor(Math.random() * 30000);
+		let yourRandomNumber = Math.floor(Math.random() * 30000);
 		db.collection("pixels").find(objToFind).limit(1).skip(yourRandomNumber).toArray(function (error, results) {
 			if (error) throw error;
 
@@ -213,7 +213,7 @@ function findPixel(x, y, data, force)
 
 function convertData(data)
 {
-	donnees = [];
+	let donnees = [];
 	for(y = 0, ny = data.length; y < ny; y++)
 	{
 		if(data[y] != null)
