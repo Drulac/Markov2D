@@ -35,7 +35,7 @@ function tryPicture(img)
 	}))
 	.on('parsed', function() {
 
-		let pixels = new Array(this.height);
+		let pixels = [];
 
 		for (let y = 0, ny = this.height; y < ny; y++) {
 			pixels[y] = new Array(this.width);
