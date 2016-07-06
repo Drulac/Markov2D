@@ -5,13 +5,15 @@ let PNG = require('pngjs').PNG;
 let db = null;
 
 MongoClient.connect("mongodb://localhost/Markov", function(error, database) {
-	if (error) return funcCallback(error);
+	if (error) throw error;
 	//Connection à la base de données 'Markov'
 
 	db = database;
 
 	let w = 5;
 	let h = 5;
+
+	
 
 	makePicture(w, h, function(data)
 	{
@@ -21,6 +23,10 @@ MongoClient.connect("mongodb://localhost/Markov", function(error, database) {
 			process.exit();
 		});
 	});
+
+	
+
+	//tryPicture('img.png');
 });
 
 function tryPicture(img)
@@ -160,7 +166,11 @@ function findPixel(x, y, data, force)
 					if(y > 2)
 					{
 						objToFind['hauthauthaut'] = data[y-3][x];
+					}else{
+						objToFind['hauthauthaut'] = null;
 					}
+				}else{
+					objToFind['hauthaut'] = null;
 				}
 			}else{
 				objToFind['haut'] = null;
@@ -174,7 +184,11 @@ function findPixel(x, y, data, force)
 					if(x > 2)
 					{
 						objToFind['gauchegauchegauche'] = data[y][x-3];
+					}else{
+						objToFind['gauchegauchegauche'] = null;
 					}
+				}else{
+					objToFind['gauchegauche'] = null;
 				}
 			}else{
 				objToFind['gauche'] = null;
