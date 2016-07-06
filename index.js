@@ -1,8 +1,8 @@
-let promise = require('promise');
-let MongoClient = require("mongodb").MongoClient;
-let fs = require('fs');
-let PNG = require('pngjs').PNG;
-let db = null;
+const promise = require('promise');
+const MongoClient = require("mongodb").MongoClient;
+const fs = require('fs');
+const PNG = require('pngjs').PNG;
+var db = null;
 
 MongoClient.connect("mongodb://localhost/Markov", function(error, database) {
 	if (error) throw error;
@@ -10,10 +10,8 @@ MongoClient.connect("mongodb://localhost/Markov", function(error, database) {
 
 	db = database;
 
-	let w = 5;
-	let h = 5;
-
-	
+	const w = 5;
+	const h = 5;
 
 	makePicture(w, h, function(data)
 	{
