@@ -1,2 +1,3 @@
 # Markov2D
-try using `npm install`
+Il est nécessaire d'avoir NodeJS ainsi que MongoDB pour tester.
+Testez en faisant `npm install` dans le dossier, puis `node index`
